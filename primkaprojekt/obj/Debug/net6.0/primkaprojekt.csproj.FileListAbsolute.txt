@@ -1,0 +1,15 @@
+C:\Users\ollid\source\repos\primkaprojekt\primkaprojekt\obj\Debug\net6.0\primkaprojekt.csproj.AssemblyReference.cache
+C:\Users\ollid\source\repos\primkaprojekt\primkaprojekt\obj\Debug\net6.0\primkaprojekt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ollid\source\repos\primkaprojekt\primkaprojekt\obj\Debug\net6.0\primkaprojekt.AssemblyInfoInputs.cache
+C:\Users\ollid\source\repos\primkaprojekt\primkaprojekt\obj\Debug\net6.0\primkaprojekt.AssemblyInfo.cs
+C:\Users\ollid\source\repos\primkaprojekt\primkaprojekt\obj\Debug\net6.0\primkaprojekt.csproj.CoreCompileInputs.cache
+C:\Users\ollid\source\repos\primkaprojekt\primkaprojekt\bin\Debug\net6.0\primkaprojekt.exe
+C:\Users\ollid\source\repos\primkaprojekt\primkaprojekt\bin\Debug\net6.0\primkaprojekt.deps.json
+C:\Users\ollid\source\repos\primkaprojekt\primkaprojekt\bin\Debug\net6.0\primkaprojekt.runtimeconfig.json
+C:\Users\ollid\source\repos\primkaprojekt\primkaprojekt\bin\Debug\net6.0\primkaprojekt.dll
+C:\Users\ollid\source\repos\primkaprojekt\primkaprojekt\bin\Debug\net6.0\primkaprojekt.pdb
+C:\Users\ollid\source\repos\primkaprojekt\primkaprojekt\obj\Debug\net6.0\primkaprojekt.dll
+C:\Users\ollid\source\repos\primkaprojekt\primkaprojekt\obj\Debug\net6.0\refint\primkaprojekt.dll
+C:\Users\ollid\source\repos\primkaprojekt\primkaprojekt\obj\Debug\net6.0\primkaprojekt.pdb
+C:\Users\ollid\source\repos\primkaprojekt\primkaprojekt\obj\Debug\net6.0\primkaprojekt.genruntimeconfig.cache
+C:\Users\ollid\source\repos\primkaprojekt\primkaprojekt\obj\Debug\net6.0\ref\primkaprojekt.dll
