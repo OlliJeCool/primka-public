@@ -1,40 +1,36 @@
-﻿namespace primkaprojekt
+﻿using System.Drawing;
+using System.Security.Cryptography.X509Certificates;
+
+namespace primkaprojekt
 {
     public class App
     {
 
-        private readonly int height = 43;
+        private readonly int height = 67;
         private readonly int width = 209;
-        private int k;
-        private int q;
+        private double k;
+        private double q;
 
         public void Run()
         {
             while (true)
             {
                 Console.Write("k: ");
-                var input = Console.ReadLine();
-                if(input != "") { k = inputParser(input); }
+                k = inputParser(Console.ReadLine());
                 Console.Write("q: ");
-                var input2 = Console.ReadLine();
-                if(input2 != "") { q = inputParser(input2); }
+                q = inputParser(Console.ReadLine());
 
                 if (k == int.MinValue || q == int.MinValue)
                 {
-                    Console.WriteLine("Incorrect values!");
+                    Console.WriteLine("wrong input");
                     continue;
                 }
 
                 string[,] screen = new string[height, width];
 
                 createAxis(screen);
-
                 calculatePointCooridnates(screen, k, q);
-
-                Console.WriteLine($"y = {k} * x + {q}");
-
                 Print(screen);
-
                 Thread.Sleep(6000);
                 Console.Clear();
             }
@@ -56,17 +52,20 @@
         }
 
 
-        private void calculatePointCooridnates(string[,] screen, int k, int q)
+        private void calculatePointCooridnates(string[,] screen, double k, double q)
         {
+            double step = k == 0 ? 1 : 1 / k;
+            if (Math.Abs(k) < 1) { step = 1; }
 
-            for (int i = -width / 2; i < width / 2 + 1; i += 1)
+            for (double i = -width / 2; i < width / 2 + 1; i += step)
             {
-                int x = i;
-                int y = k * x + q;
+                double x = i;
+                double y = k * x + q;
+
 
                 if (height / 2 - y < 0 || height / 2 - y > height - 1 || width / 2 + x < 0 || width / 2 + x > width - 1) { continue; }
 
-                screen[height / 2 - y, width / 2 + x] = "x";
+                screen[height / 2 - (int)Math.Round(y), width / 2 + (int)Math.Round(x)] = "x";
             }
         }
 
@@ -77,19 +76,35 @@
             {
                 for (int j = 0; j < width; j++)
                 {
+                    Console.ForegroundColor = screen[i, j] == "x" ? ConsoleColor.Cyan : ConsoleColor.White;
                     Console.Write(String.IsNullOrEmpty(screen[i, j]) ? " " : screen[i, j]);
                 }
                 Console.WriteLine();
             }
         }
 
-        private static int inputParser(string val)
+        private static double inputParser(string val)
         {
-            if (int.TryParse(val, out int num))
+            var temp = val.Split("/");
+
+            if (temp.Length == 1)
             {
-                return num;
+                if (int.TryParse(val, out int num))
+                {
+                    return (double)num;
+                }
+                else return int.MinValue;
             }
-            else return int.MinValue;
+
+            else if (temp.Length == 2)
+            {
+                if (int.TryParse(temp[0].ToString(), out int a) && int.TryParse(temp[1].ToString(), out int b))
+                {
+                    return (double)a / b;
+                }
+                return int.MinValue;
+            }
+            return int.MinValue;
         }
     }
 }
